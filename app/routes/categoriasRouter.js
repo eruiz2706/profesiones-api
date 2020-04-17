@@ -1,7 +1,7 @@
 'use strict'
 
 const express = require('express');
-const CategoriasController = require('../app/http/controllers/categoriasController');
+const CategoriasController = require('../controllers/categoriasController');
 const router = express.Router();
 
 const categoriasController = new CategoriasController();

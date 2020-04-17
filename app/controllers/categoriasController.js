@@ -1,6 +1,6 @@
 'use strict'
 
-var Categoria = require('../../models/categoria');
+var Categoria = require('../models/categoria');
 
 class CategoriasController{
 

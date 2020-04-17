@@ -2,7 +2,7 @@
 
 const express = require('express');
 const config  = require('../config');
-const categoriasRouter = require('../routes/categoriasRouter');
+const categoriasRouter = require('./categoriasRouter');
 
 const app = express();
 const API_MAPPING = config.API_MAPPING;

@@ -9,15 +9,15 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const config  = require('./config');
+const config  = require('./app/config');
 
 /*
 |--------------------------------------------------------------------------
 | Import de controladores,rutas y middleware
 |--------------------------------------------------------------------------
 */
-const mapRouter = require('./routes/index');
-const corsMiddleware = require('./app/http/middlewares/cors');
+const mapRouter = require('./app/routes/index');
+const corsMiddleware = require('./app/middlewares/cors');
 
 /*
 |--------------------------------------------------------------------------
