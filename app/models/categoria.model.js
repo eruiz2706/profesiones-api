@@ -9,6 +9,10 @@ var CategoriaSchema = Schema({
         type: String,
         unique: true,
         required: [true,'El nombre es requerido']
+    },
+    estado: {
+        type: Boolean,
+        default: true
     }
 });
 

@@ -1,0 +1,44 @@
+'use strict'
+
+const express = require('express');
+const { CategoriasController } = require('../controllers/categorias.controller');
+const router = express.Router();
+
+const categoriasController = new CategoriasController();
+
+/*
+|--------------------------------------------------------------------------
+| End points listado de categorias
+|--------------------------------------------------------------------------
+*/
+router.get('/categorias',categoriasController.all);
+
+/*
+|--------------------------------------------------------------------------
+| End points buscar categoria por id
+|--------------------------------------------------------------------------
+*/
+router.get('/categorias/:id',categoriasController.findById);
+
+/*
+|--------------------------------------------------------------------------
+| End points crear categoria
+|--------------------------------------------------------------------------
+*/
+router.post('/categorias',categoriasController.create);
+
+/*
+|--------------------------------------------------------------------------
+| End points actualizar categoria por id
+|--------------------------------------------------------------------------
+*/
+router.put('/categorias/:id',categoriasController.update);
+
+/*
+|--------------------------------------------------------------------------
+| End points inactivar categoria por id
+|--------------------------------------------------------------------------
+*/
+router.delete('/categorias/:id',categoriasController.delete);
+
+module.exports = router;
