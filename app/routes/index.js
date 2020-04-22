@@ -3,8 +3,7 @@
 const express = require('express');
 const { config }  = require('../config');
 const categoriasRouter = require('./categorias.router');
-const usuariosRouter = require('./usuarios.router');
-const loginRouter = require('./login.router');
+const autenticacionRouter = require('./autenticacion.router');
 
 const app = express();
 const API_MAPPING = config.API_MAPPING;
@@ -18,16 +17,9 @@ app.use(`${API_MAPPING}`,categoriasRouter);
 
 /*
 |--------------------------------------------------------------------------
-| End points usuarios
+| End points autenticacion
 |--------------------------------------------------------------------------
 */
-app.use(`${API_MAPPING}`,usuariosRouter);
-
-/*
-|--------------------------------------------------------------------------
-| End points login
-|--------------------------------------------------------------------------
-*/
-app.use(`${API_MAPPING}`,loginRouter);
+app.use(`${API_MAPPING}`,autenticacionRouter);
 
 module.exports = app;

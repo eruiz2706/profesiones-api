@@ -55,6 +55,10 @@ var UsuarioSchema = Schema({
         type: Boolean,
         required: [true,'Debe marcar los terminos de uso']
     },
+    rol: {
+        type: String,
+        default: 'CLIENTE_ROL'
+    },
     profesional: {
         type: Boolean,
         default: false,

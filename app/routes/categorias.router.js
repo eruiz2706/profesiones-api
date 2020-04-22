@@ -2,6 +2,7 @@
 
 const express = require('express');
 const { CategoriasController } = require('../controllers/categorias.controller');
+const { verificaTokenMiddleware, adminRolMiddleware } = require('../middlewares/autenticacion.middleware');
 const router = express.Router();
 
 const categoriasController = new CategoriasController();
@@ -25,20 +26,20 @@ router.get('/categorias/:id',categoriasController.findById);
 | End points crear categoria
 |--------------------------------------------------------------------------
 */
-router.post('/categorias',categoriasController.create);
+router.post('/categorias',[verificaTokenMiddleware, adminRolMiddleware],categoriasController.create);
 
 /*
 |--------------------------------------------------------------------------
 | End points actualizar categoria por id
 |--------------------------------------------------------------------------
 */
-router.put('/categorias/:id',categoriasController.update);
+router.put('/categorias/:id',[verificaTokenMiddleware, adminRolMiddleware],categoriasController.update);
 
 /*
 |--------------------------------------------------------------------------
 | End points inactivar categoria por id
 |--------------------------------------------------------------------------
 */
-router.delete('/categorias/:id',categoriasController.delete);
+router.delete('/categorias/:id',[verificaTokenMiddleware, adminRolMiddleware],categoriasController.delete);
 
 module.exports = router;
