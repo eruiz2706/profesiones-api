@@ -19,10 +19,6 @@ var UsuarioSchema = Schema({
         unique: true,
         required: [true,'El password es requerido']
     },
-    nombre: {
-        type: String,
-        required: false,
-    },
     documento: {
         type: String,
         required: false,

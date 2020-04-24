@@ -67,7 +67,7 @@ class AutenticacionController{
 
             let token = jwt.sign({
                 rol: usuario.rol
-            }, config.JWT_SECRET, { expiresIn: 60 * 5 });
+            }, config.JWT_SECRET, { expiresIn: 60 * 60 });
 
             ResponseHelper(res,{
                 status: 200,

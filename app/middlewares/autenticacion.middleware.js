@@ -31,7 +31,7 @@ let adminRolMiddleware = (req, res, next) =>{
     if(req.rol_decoded !== 'ADMIN_ROL'){
         next(new GenericError(500,"Usuario no autorizado"));
     }
-
+    next();
 }
 
 /**
@@ -43,7 +43,7 @@ let clienteRolMiddleware = (req, res, next) =>{
     if(req.rol_decoded !== 'CLIENTE_ROL'){
         next(new GenericError(500,"Usuario no autorizado"));
     }
-
+    next();
 }
 
 /**
@@ -55,7 +55,7 @@ let profesioanlRolMiddleware = (req, res, next) =>{
     if(req.rol_decoded !== 'PROFESIONAL_ROL'){
         next(new GenericError(500,"Usuario no autorizado"));
     }
-
+    next();
 }
 
 let clienteProfesioanlRolMiddleware = (req, res, next) =>{
@@ -63,6 +63,7 @@ let clienteProfesioanlRolMiddleware = (req, res, next) =>{
     if(req.rol_decoded !== 'PROFESIONAL_ROL' && req.rol_decoded !== 'CLIENTE_ROL'){
         next(new GenericError(500,"Usuario no autorizado"));
     }
+    next();
 }
 
 module.exports = {
