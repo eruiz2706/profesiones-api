@@ -65,9 +65,10 @@ class AutenticacionController{
                 throw new GenericError(500,"Usuario o contraseña incorrectos"); 
             }
 
+            let expiresIn = 60 * config.TOKEN_EXPIRED;
             let token = jwt.sign({
                 rol: usuario.rol
-            }, config.JWT_SECRET, { expiresIn: 60 * 60 });
+            }, config.JWT_SECRET, { expiresIn: expiresIn });
 
             ResponseHelper(res,{
                 status: 200,

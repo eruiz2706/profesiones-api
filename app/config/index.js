@@ -10,7 +10,8 @@ const config = {
     PORT: process.env.PORT || 3000,
     API_MAPPING: process.env.API_MAPPING || '',
     MONGO_URI: process.env.MONGO_URI || '',
-    JWT_SECRET: process.env.JWT_SECRET || ''
+    JWT_SECRET: process.env.JWT_SECRET || '',
+    TOKEN_EXPIRED: process.env.TOKEN_EXPIRED || 5
 }
 
 module.exports =  {
